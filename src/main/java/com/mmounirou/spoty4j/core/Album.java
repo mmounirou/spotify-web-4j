@@ -9,17 +9,18 @@ import com.mmounirou.spoty4j.api.Lookup;
 public class Album
 {
 	private String m_name;
-	private String m_uri;
+	private String m_href;
 	private Artist m_artist;
 	private String m_id;
 	private int m_release;
-
-	private List<String> m_territories = Lists.newArrayList();
+	private double m_popularity;
+	
+	private String m_territories;
 	private List<Track> m_tracks = Lists.newArrayList();
 
 	public Album(String uri, String name)
 	{
-		m_uri = uri;
+		m_href = uri;
 		m_name = name;
 	}
 
@@ -42,14 +43,14 @@ public class Album
 		m_name = name;
 	}
 
-	public String getUri()
+	public String getHref()
 	{
-		return m_uri;
+		return m_href;
 	}
 
-	public void setUri(String uri)
+	public void setHref(String uri)
 	{
-		m_uri = uri;
+		m_href = uri;
 	}
 
 	public Artist getArtist()
@@ -82,15 +83,6 @@ public class Album
 		m_release = release;
 	}
 
-	public List<String> getTerritories()
-	{
-		return ImmutableList.copyOf(m_territories);
-	}
-
-	public void setTerritories(List<String> territories)
-	{
-		m_territories.addAll(territories);
-	}
 
 	public List<Track> getTracks()
 	{
@@ -100,6 +92,26 @@ public class Album
 	public void setTracks(List<Track> tracks)
 	{
 		m_tracks.addAll(tracks);
+	}
+
+	public String getTerritories()
+	{
+		return m_territories;
+	}
+
+	public void setTerritories(String territories)
+	{
+		m_territories = territories;
+	}
+
+	public double getPopularity()
+	{
+		return m_popularity;
+	}
+
+	public void setPopularity(double popularity)
+	{
+		m_popularity = popularity;
 	}
 
 }

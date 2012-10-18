@@ -37,12 +37,12 @@ public class Artist
 		m_name = name;
 	}
 
-	public String getUri()
+	public String getHref()
 	{
 		return m_uri;
 	}
 
-	public void setUri(String uri)
+	public void setHref(String uri)
 	{
 		m_uri = uri;
 	}
