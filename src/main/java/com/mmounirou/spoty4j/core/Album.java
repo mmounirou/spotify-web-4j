@@ -12,7 +12,7 @@ public class Album
 	private String m_href;
 	private Artist m_artist;
 	private String m_id;
-	private int m_release;
+	private int m_released;
 	private double m_popularity;
 	
 	private String m_territories;
@@ -73,14 +73,14 @@ public class Album
 		m_id = id;
 	}
 
-	public int getRelease()
+	public int getReleased()
 	{
-		return m_release;
+		return m_released;
 	}
 
-	public void setRelease(int release)
+	public void setReleased(int release)
 	{
-		m_release = release;
+		m_released = release;
 	}
 
 

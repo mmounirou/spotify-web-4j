@@ -5,7 +5,7 @@ import com.mmounirou.spoty4j.api.Lookup;
 public class Track
 {
 	private String m_name;
-	private String m_uri;
+	private String m_href;
 	private Artist m_artist;
 	private Album album;
 	private String id;
@@ -17,7 +17,7 @@ public class Track
 
 	public Track(String uri, String name)
 	{
-		m_uri = uri;
+		m_href = uri;
 		m_name = name;
 	}
 
@@ -40,14 +40,14 @@ public class Track
 		m_name = name;
 	}
 
-	public String getUri()
+	public String getHref()
 	{
-		return m_uri;
+		return m_href;
 	}
 
-	public void setUri(String uri)
+	public void setHref(String uri)
 	{
-		m_uri = uri;
+		m_href = uri;
 	}
 
 	public Artist getArtist()

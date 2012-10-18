@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tracks xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns="http://www.spotify.com/ns/music/1">
+  <opensearch:Query role="request" startPage="1" searchTerms="foo"/>
+  <opensearch:totalResults>768</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+  <track href="spotify:track:3ZsjgLDSvusBgxGWrTAVto">
+    <name>The Pretender</name>
+    <artist href="spotify:artist:7jy3rLJdDQY21OgRLCZ9sD">
+      <name>Foo Fighters</name>
+    </artist>
+    <id type="isrc">USRW30700007</id>
+    <id type="isrc">USRW30700007</id>
+    <album href="spotify:album:2ovXUTjkBkNlgAU7DTIxX9">
+      <name>Echoes, Silence, Patience & Grace</name>
+      <released>2007</released>
+      <availability>
+        <territories>AD AE AF AG AI AL AM AN AO AQ AR AT AU AZ BA BB BD BE BF BG BH BI BJ BM BN BO BR BS BT BW BY BZ CD CF CG CH CI CK CL CM CO CR CU CV CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GL GM GN GP GQ GR GT GU GW GY HN HR HT HU IE IL IO IQ IR IS IT JM JO KE KG KH KI KM KN KP KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MZ NA NC NE NG NI NL NO NP NR NU NZ OM PA PE PF PG PK PL PM PN PR PS PT PW PY QA RE RO RU RW SA SB SC SD SE SH SI SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TJ TK TL TM TN TO TR TT TV TZ UA UG UY UZ VA VC VE VG VN VU WF WS YE YT ZA ZM ZW</territories>
+      </availability>
+    </album>
+    <track-number>1</track-number>
+    <length>269.373000</length>
+    <popularity>0.79251</popularity>
+  </track>
+  <track href="spotify:track:3ZsjgLDSvusBgxGWrTAVto BIS">
+    <name>The Pretender BIS</name>
+    <artist href="spotify:artist:7jy3rLJdDQY21OgRLCZ9sD BIS">
+      <name>Foo Fighters BIS</name>
+    </artist>
+    <id type="isrc">USRW30700007 BIS</id>
+    <id type="isrc">USRW30700007 BIS</id>
+    <album href="spotify:album:2ovXUTjkBkNlgAU7DTIxX9 BIS">
+      <name>Echoes, Silence, Patience & Grace BIS</name>
+      <released>2007</released>
+      <availability>
+        <territories>AD AE AF AG AI AL AM AN AO AQ AR AT AU AZ BA BB BD BE BF BG BH BI BJ BM BN BO BR BS BT BW BY BZ CD CF CG CH CI CK CL CM CO CR CU CV CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GL GM GN GP GQ GR GT GU GW GY HN HR HT HU IE IL IO IQ IR IS IT JM JO KE KG KH KI KM KN KP KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MZ NA NC NE NG NI NL NO NP NR NU NZ OM PA PE PF PG PK PL PM PN PR PS PT PW PY QA RE RO RU RW SA SB SC SD SE SH SI SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TJ TK TL TM TN TO TR TT TV TZ UA UG UY UZ VA VC VE VG VN VU WF WS YE YT ZA ZM ZW</territories>
+      </availability>
+    </album>
+    <track-number>1</track-number>
+    <length>269.373000</length>
+    <popularity>0.79251</popularity>
+  </track></tracks>
