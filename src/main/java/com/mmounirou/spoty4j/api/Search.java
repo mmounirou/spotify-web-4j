@@ -24,7 +24,7 @@ public class Search
 		ClientConfig config = new DefaultClientConfig(AlbumSearchResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
-		AlbumSearchResult albumSearchResult = resource.path("albums").queryParam("q", name).get(AlbumSearchResult.class);
+		AlbumSearchResult albumSearchResult = resource.path("album").queryParam("q", name).get(AlbumSearchResult.class);
 		return albumSearchResult.getAlbums();
 	}
 
@@ -33,7 +33,7 @@ public class Search
 		ClientConfig config = new DefaultClientConfig(ArtistSearchResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
-		ArtistSearchResult artistSearchResult = resource.path("artists").queryParam("q", name).get(ArtistSearchResult.class);
+		ArtistSearchResult artistSearchResult = resource.path("artist").queryParam("q", name).get(ArtistSearchResult.class);
 		return artistSearchResult.getArtists();
 	}
 
@@ -42,7 +42,7 @@ public class Search
 		ClientConfig config = new DefaultClientConfig(TrackSearchResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
-		TrackSearchResult trackSearchResult = resource.path("tracks").queryParam("q", name).get(TrackSearchResult.class);
+		TrackSearchResult trackSearchResult = resource.path("track").queryParam("q", name).get(TrackSearchResult.class);
 		return trackSearchResult.getTracks();
 	}
 
