@@ -31,7 +31,11 @@ public class Search
 
 	public static ImmutableList<Artist> searchArtist(String name)
 	{
-		return null;
+		ClientConfig config = new DefaultClientConfig(ArtistSearchResultProvider.class);
+		Client client = Client.create(config);
+		WebResource resource = client.resource(BASE_URL);
+		ArtistSearchResult artistSearchResult = resource.path("artists").queryParam("q", name).get(ArtistSearchResult.class);
+		return artistSearchResult.getArtists();
 	}
 
 	public static ImmutableList<Track> searchTrack(String name)

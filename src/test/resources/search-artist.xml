@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<artists xmlns="http://www.spotify.com/ns/music/1"
+	xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+	<opensearch:Query role="request" searchTerms="foo"
+		startPage="1" />
+	<opensearch:totalResults>4711</opensearch:totalResults>
+	<opensearch:startIndex>0</opensearch:startIndex>
+	<opensearch:itemsPerPage>100</opensearch:itemsPerPage>
+	<artist href="spotify:artist:7jy3rLJdDQY21OgRLCZ9sD">
+		<name>Foo Fighters</name>
+		<id type="mbid"
+			href="http://musicbrainz.org/artist/67f66c07-6e61-4026-ade5-7e782fad3a5d.html">
+			67f66c07-6e61-4026-ade5-7e782fad3a5d
+		</id>
+				<!-- support this
+		
+		<id type="amg"
+			href="http://www.allmusic.com/cg/amg.dll?p=amg&sql=11:jxfwxqegldde">
+			P 144725
+		</id>
+		-->
+		<popularity>0.76</popularity>
+	</artist>
+
+	<artist href="spotify:artist:7jy3rLJdDQY21OgRLCZ9sD PLPO">
+		<name>Foo Fighters PLPOP</name>
+		<id type="mbid"
+			href="http://musicbrainz.org/artist/67f66c07-6e61-4026-ade5-7e782fad3a5d.html">
+			67f66c07-6e61-4026-ade5-7e782fad3a5d PLPO
+		</id>
+		<!-- support this
+		<id type="amg"
+			href="http://www.allmusic.com/cg/amg.dll?p=amg&sql=11:jxfwxqegldde">
+			P 144725
+		</id>
+		-->
+		<popularity>0.76</popularity>
+	</artist>
+</artists>

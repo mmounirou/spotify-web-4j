@@ -10,6 +10,8 @@ public class Artist
 {
 	private String m_name;
 	private String m_uri;
+	private String m_id;
+	private double m_popularity;
 	private List<Album> m_albums = Lists.newArrayList();
 
 	public Artist(String strUri, String strName)
@@ -55,5 +57,25 @@ public class Artist
 	public void setAlbums(List<Album> albums)
 	{
 		m_albums.addAll(albums);
+	}
+
+	public String getId()
+	{
+		return m_id;
+	}
+
+	public void setId(String id)
+	{
+		m_id = id;
+	}
+
+	public double getPopularity()
+	{
+		return m_popularity;
+	}
+
+	public void setPopularity(double popularity)
+	{
+		m_popularity = popularity;
 	}
 }
