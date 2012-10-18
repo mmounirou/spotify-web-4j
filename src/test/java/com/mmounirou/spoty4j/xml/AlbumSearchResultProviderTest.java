@@ -2,7 +2,6 @@ package com.mmounirou.spoty4j.xml;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-import java.awt.im.InputContext;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -41,7 +40,7 @@ public class AlbumSearchResultProviderTest
 	@Test
 	public void testIsNotReadable()
 	{
-		assertThat(m_albumSearchResultProvider.isReadable(InputContext.class, null, null, null)).isFalse();
+		assertThat(m_albumSearchResultProvider.isReadable(Object.class, null, null, null)).isFalse();
 	}
 
 	@Test

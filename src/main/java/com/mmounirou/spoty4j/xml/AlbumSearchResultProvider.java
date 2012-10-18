@@ -41,7 +41,7 @@ public class AlbumSearchResultProvider implements MessageBodyReader<AlbumSearchR
 
 	public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)
 	{
-		return type.isAssignableFrom(AlbumSearchResult.class);
+		return AlbumSearchResult.class.isAssignableFrom(type);
 	}
 
 	public AlbumSearchResult readFrom(Class<AlbumSearchResult> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, String> httpHeaders,
