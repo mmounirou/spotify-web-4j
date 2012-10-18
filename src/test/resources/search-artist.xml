@@ -12,13 +12,10 @@
 			href="http://musicbrainz.org/artist/67f66c07-6e61-4026-ade5-7e782fad3a5d.html">
 			67f66c07-6e61-4026-ade5-7e782fad3a5d
 		</id>
-				<!-- support this
-		
 		<id type="amg"
 			href="http://www.allmusic.com/cg/amg.dll?p=amg&sql=11:jxfwxqegldde">
 			P 144725
 		</id>
-		-->
 		<popularity>0.76</popularity>
 	</artist>
 
@@ -28,12 +25,10 @@
 			href="http://musicbrainz.org/artist/67f66c07-6e61-4026-ade5-7e782fad3a5d.html">
 			67f66c07-6e61-4026-ade5-7e782fad3a5d PLPO
 		</id>
-		<!-- support this
 		<id type="amg"
 			href="http://www.allmusic.com/cg/amg.dll?p=amg&sql=11:jxfwxqegldde">
 			P 144725
 		</id>
-		-->
 		<popularity>0.76</popularity>
 	</artist>
 </artists>

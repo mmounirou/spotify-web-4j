@@ -69,7 +69,7 @@ public class ArtistSearchResultProvider implements MessageBodyReader<ArtistSearc
 	private ByteArrayInputStream cleanStream(InputStream entityStream) throws IOException, UnsupportedEncodingException
 	{
 		String strStream = CharStreams.toString(new InputStreamReader(entityStream, Charsets.UTF_8.name()));
-		String clean = strStream.replaceAll("&([^;]+(?!(?:\\w|;)))", "&amp;$1");
+		String clean = strStream.replace("&","-");
 		return new ByteArrayInputStream(clean.getBytes());
 	}
 

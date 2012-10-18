@@ -47,7 +47,7 @@ public class ArtistSearchResultProviderTest
 		assertThat(artists).hasSize(2);
 		Artist artist = artists.get(0);
 		assertThat(artist.getName()).isEqualTo("Foo Fighters");
-		assertThat(artist.getId()).isEqualTo("67f66c07-6e61-4026-ade5-7e782fad3a5d");
+		assertThat(artist.getId()).isEqualTo("P 144725");
 		assertThat(artist.getHref()).isEqualTo("spotify:artist:7jy3rLJdDQY21OgRLCZ9sD");
 		assertThat(artist.getPopularity()).isEqualTo(0.76);
 
