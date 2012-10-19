@@ -5,6 +5,7 @@ import com.mmounirou.spoty4j.core.Artist;
 import com.mmounirou.spoty4j.core.Track;
 import com.mmounirou.spoty4j.xml.AlbumLookupResultProvider;
 import com.mmounirou.spoty4j.xml.ArtistLookupResultProvider;
+import com.mmounirou.spoty4j.xml.TrackLookupResultProvider;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
@@ -33,6 +34,9 @@ public class Lookup
 
 	public static Track fetchTrack(Track track)
 	{
-		return track;
+		ClientConfig config = new DefaultClientConfig(TrackLookupResultProvider.class);
+		Client client = Client.create(config);
+		WebResource resource = client.resource(BASE_URL);
+		return resource.queryParam("uri", track.getHref()).get(Track.class);
 	}
 }

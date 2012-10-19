@@ -15,7 +15,6 @@ import org.xml.sax.SAXException;
 
 import com.mmounirou.spoty4j.core.Album;
 import com.mmounirou.spoty4j.core.Artist;
-import com.mmounirou.spoty4j.xml.ArtistSearchResultProvider.ArtistSearchResult;
 
 public class ArtistLookupResultProvider implements MessageBodyReader<Artist>
 {
