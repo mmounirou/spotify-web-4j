@@ -21,7 +21,6 @@ public class Lookup
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
 		return resource.queryParam("uri", artist.getHref()).queryParam("extras", "albumdetail").get(Artist.class);
-
 	}
 
 	public static Album fetchAlbum(Album album)
