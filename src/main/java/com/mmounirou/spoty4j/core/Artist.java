@@ -59,6 +59,11 @@ public class Artist
 		m_albums.addAll(albums);
 	}
 
+	public void addAlbum(Album album)
+	{
+		m_albums.add(album);
+	}
+
 	public String getId()
 	{
 		return m_id;

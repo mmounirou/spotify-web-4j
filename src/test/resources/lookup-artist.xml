@@ -1,0 +1,13 @@
+<artist xmlns="http://www.spotify.com/ns/music/1">
+  <name>Basement Jaxx</name>
+  <albums>
+    <album href="spotify:album:0vQbb9UeAU7R8wk3ZAjNx6">
+      <name>Crazy Itch Radio</name>
+      <artist href="spotify:artist:4YrKBkKSVeqDamzBPWVnSJ">
+        <name>Basement Jaxx</name>
+      </artist>
+      <released>2006</released>
+	  <id type="upc">634904020583</id>
+    </album>
+  </albums>
+</artist>
