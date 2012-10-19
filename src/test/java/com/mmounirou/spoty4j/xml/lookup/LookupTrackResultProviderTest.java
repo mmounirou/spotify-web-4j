@@ -1,4 +1,4 @@
-package com.mmounirou.spoty4j.xml;
+package com.mmounirou.spoty4j.xml.lookup;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.mmounirou.spoty4j.core.Track;
+import com.mmounirou.spoty4j.xml.lookup.LookupTrackResultProvider;
 
 public class LookupTrackResultProviderTest
 {

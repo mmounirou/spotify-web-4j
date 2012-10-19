@@ -1,4 +1,4 @@
-package com.mmounirou.spoty4j.xml;
+package com.mmounirou.spoty4j.xml.lookup;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -11,6 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.mmounirou.spoty4j.core.Album;
+import com.mmounirou.spoty4j.xml.lookup.LookupAlbumResultProvider;
+import com.mmounirou.spoty4j.xml.search.SearchAlbumResultProvider;
 
 public class LookupAlbumResultProviderTest
 {

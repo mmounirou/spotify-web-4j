@@ -1,4 +1,4 @@
-package com.mmounirou.spoty4j.xml;
+package com.mmounirou.spoty4j.xml.search;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -12,7 +12,8 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableList;
 import com.mmounirou.spoty4j.core.Artist;
-import com.mmounirou.spoty4j.xml.SearchArtistResultProvider.ArtistSearchResult;
+import com.mmounirou.spoty4j.xml.search.SearchArtistResultProvider;
+import com.mmounirou.spoty4j.xml.search.SearchArtistResultProvider.ArtistSearchResult;
 
 public class SearchArtistResultProviderTest
 {

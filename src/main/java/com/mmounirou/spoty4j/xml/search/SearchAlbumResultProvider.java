@@ -1,26 +1,17 @@
-package com.mmounirou.spoty4j.xml;
+package com.mmounirou.spoty4j.xml.search;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Type;
 import java.util.List;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.ext.MessageBodyReader;
-
 import org.apache.commons.digester3.Digester;
-import org.xml.sax.SAXException;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.mmounirou.spoty4j.core.Album;
 import com.mmounirou.spoty4j.core.Artist;
-import com.mmounirou.spoty4j.xml.SearchAlbumResultProvider.AlbumSearchResult;
+import com.mmounirou.spoty4j.xml.DigesterMessageBodyReader;
+import com.mmounirou.spoty4j.xml.search.SearchAlbumResultProvider.AlbumSearchResult;
 
-public class SearchAlbumResultProvider implements MessageBodyReader<AlbumSearchResult>
+public class SearchAlbumResultProvider extends DigesterMessageBodyReader<AlbumSearchResult>
 {
 	public static final class AlbumSearchResult
 	{
@@ -39,28 +30,7 @@ public class SearchAlbumResultProvider implements MessageBodyReader<AlbumSearchR
 
 	}
 
-	public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)
-	{
-		return AlbumSearchResult.class.isAssignableFrom(type);
-	}
-
-	public AlbumSearchResult readFrom(Class<AlbumSearchResult> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, String> httpHeaders,
-			InputStream entityStream) throws IOException, WebApplicationException
-	{
-		Digester digester = new Digester();
-		addRules(digester);
-
-		try
-		{
-			return digester.parse(entityStream);
-		}
-		catch ( SAXException e )
-		{
-			throw new IOException(e);
-		}
-	}
-
-	private void addRules(Digester digester)
+	protected void addRules(Digester digester)
 	{
 		digester.addObjectCreate("albums", AlbumSearchResult.class);
 
@@ -73,13 +43,19 @@ public class SearchAlbumResultProvider implements MessageBodyReader<AlbumSearchR
 		digester.addBeanPropertySetter("albums/album/name");
 		digester.addBeanPropertySetter("albums/album/availability/territories");
 		digester.addSetProperties("albums/album", "href", "href");
- 
+
 		digester.addObjectCreate("albums/album/artist", Artist.class);
 		digester.addSetNext("albums/album/artist", "setArtist");
 
 		digester.addSetProperties("albums/album/artist", "href", "href");
 		digester.addBeanPropertySetter("albums/album/artist/name");
 
+	}
+
+	@Override
+	protected Class<AlbumSearchResult> getGenericClass()
+	{
+		return AlbumSearchResult.class;
 	}
 
 }

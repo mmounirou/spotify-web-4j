@@ -1,48 +1,16 @@
-package com.mmounirou.spoty4j.xml;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Type;
-
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.ext.MessageBodyReader;
+package com.mmounirou.spoty4j.xml.lookup;
 
 import org.apache.commons.digester3.Digester;
-import org.xml.sax.SAXException;
 
 import com.mmounirou.spoty4j.core.Album;
 import com.mmounirou.spoty4j.core.Artist;
 import com.mmounirou.spoty4j.core.Track;
+import com.mmounirou.spoty4j.xml.DigesterMessageBodyReader;
 
-public class LookupTrackResultProvider implements MessageBodyReader<Track>
+public class LookupTrackResultProvider extends DigesterMessageBodyReader<Track>
 {
 
-	public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)
-	{
-		return Track.class.isAssignableFrom(type);
-	}
-
-	public Track readFrom(Class<Track> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, String> httpHeaders, InputStream entityStream)
-			throws IOException, WebApplicationException
-	{
-
-		Digester digester = new Digester();
-		addRules(digester);
-
-		try
-		{
-			return digester.parse(entityStream);
-		}
-		catch ( SAXException e )
-		{
-			throw new IOException(e);
-		}
-	}
-
-	private void addRules(Digester digester)
+	protected void addRules(Digester digester)
 	{
 		digester.addObjectCreate("track", Track.class);
 
@@ -64,6 +32,13 @@ public class LookupTrackResultProvider implements MessageBodyReader<Track>
 		digester.addBeanPropertySetter("track/album/name");
 		digester.addBeanPropertySetter("track/album/availability/territories");
 
+	}
+
+	@Override
+	protected Class<Track> getGenericClass()
+	{
+		// TODO Auto-generated method stub
+		return Track.class;
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.mmounirou.spoty4j.xml;
+package com.mmounirou.spoty4j.xml.search;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -13,7 +13,8 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableList;
 import com.mmounirou.spoty4j.core.Album;
-import com.mmounirou.spoty4j.xml.SearchAlbumResultProvider.AlbumSearchResult;
+import com.mmounirou.spoty4j.xml.search.SearchAlbumResultProvider;
+import com.mmounirou.spoty4j.xml.search.SearchAlbumResultProvider.AlbumSearchResult;
 
 public class SearchAlbumResultProviderTest
 {
