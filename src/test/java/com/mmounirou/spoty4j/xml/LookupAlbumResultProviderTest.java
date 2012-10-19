@@ -12,14 +12,14 @@ import org.junit.Test;
 
 import com.mmounirou.spoty4j.core.Album;
 
-public class AlbumLookupResultProviderTest
+public class LookupAlbumResultProviderTest
 {
-	private AlbumLookupResultProvider m_albumLookupResultProvider;
+	private LookupAlbumResultProvider m_albumLookupResultProvider;
 
 	@Before
 	public void createAlbumLookupResultProvider() throws Exception
 	{
-		m_albumLookupResultProvider = new AlbumLookupResultProvider();
+		m_albumLookupResultProvider = new LookupAlbumResultProvider();
 	}
 
 	@Test
@@ -37,7 +37,7 @@ public class AlbumLookupResultProviderTest
 	@Test
 	public void testReadFrom() throws WebApplicationException, IOException
 	{
-		InputStream entityStream = AlbumSearchResultProvider.class.getResourceAsStream("/lookup-album.xml");
+		InputStream entityStream = SearchAlbumResultProvider.class.getResourceAsStream("/lookup-album.xml");
 		Album album = m_albumLookupResultProvider.readFrom(Album.class, null, null, null, null, entityStream);
 
 		assertThat(album.getId()).isEqualTo("634904012922");

@@ -24,9 +24,9 @@ import com.google.common.io.CharStreams;
 import com.mmounirou.spoty4j.core.Album;
 import com.mmounirou.spoty4j.core.Artist;
 import com.mmounirou.spoty4j.core.Track;
-import com.mmounirou.spoty4j.xml.TrackSearchResultProvider.TrackSearchResult;
+import com.mmounirou.spoty4j.xml.SearchTrackResultProvider.TrackSearchResult;
 
-public class TrackSearchResultProvider implements MessageBodyReader<TrackSearchResult>
+public class SearchTrackResultProvider implements MessageBodyReader<TrackSearchResult>
 {
 
 	public static class TrackSearchResult

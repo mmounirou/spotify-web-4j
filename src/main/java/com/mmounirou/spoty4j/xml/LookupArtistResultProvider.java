@@ -16,7 +16,7 @@ import org.xml.sax.SAXException;
 import com.mmounirou.spoty4j.core.Album;
 import com.mmounirou.spoty4j.core.Artist;
 
-public class ArtistLookupResultProvider implements MessageBodyReader<Artist>
+public class LookupArtistResultProvider implements MessageBodyReader<Artist>
 {
 
 	public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)

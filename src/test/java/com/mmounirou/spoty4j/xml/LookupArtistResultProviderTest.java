@@ -12,15 +12,15 @@ import org.junit.Test;
 
 import com.mmounirou.spoty4j.core.Artist;
 
-public class ArtistLookupResultProviderTest
+public class LookupArtistResultProviderTest
 {
 
-	private ArtistLookupResultProvider m_artistLookupResultProvider;
+	private LookupArtistResultProvider m_artistLookupResultProvider;
 
 	@Before
 	public void createArtistLookupResultProvider() throws Exception
 	{
-		m_artistLookupResultProvider = new ArtistLookupResultProvider();
+		m_artistLookupResultProvider = new LookupArtistResultProvider();
 	}
 
 	@Test

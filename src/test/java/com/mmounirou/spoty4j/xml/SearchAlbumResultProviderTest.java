@@ -13,17 +13,17 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableList;
 import com.mmounirou.spoty4j.core.Album;
-import com.mmounirou.spoty4j.xml.AlbumSearchResultProvider.AlbumSearchResult;
+import com.mmounirou.spoty4j.xml.SearchAlbumResultProvider.AlbumSearchResult;
 
-public class AlbumSearchResultProviderTest
+public class SearchAlbumResultProviderTest
 {
 
-	private AlbumSearchResultProvider m_albumSearchResultProvider;
+	private SearchAlbumResultProvider m_albumSearchResultProvider;
 
 	@Before
 	public void createAlbumSearchResultProvider() throws Exception
 	{
-		m_albumSearchResultProvider = new AlbumSearchResultProvider();
+		m_albumSearchResultProvider = new SearchAlbumResultProvider();
 	}
 
 	@After
@@ -46,7 +46,7 @@ public class AlbumSearchResultProviderTest
 	@Test
 	public void testReadFrom() throws WebApplicationException, IOException
 	{
-		InputStream entityStream = AlbumSearchResultProviderTest.class.getResourceAsStream("/search-album.xml");
+		InputStream entityStream = SearchAlbumResultProviderTest.class.getResourceAsStream("/search-album.xml");
 		AlbumSearchResult result = m_albumSearchResultProvider.readFrom(AlbumSearchResult.class, null, null, null, null, entityStream);
 
 		ImmutableList<Album> albums = result.getAlbums();

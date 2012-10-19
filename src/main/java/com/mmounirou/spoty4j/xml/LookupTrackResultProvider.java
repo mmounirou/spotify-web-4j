@@ -17,7 +17,7 @@ import com.mmounirou.spoty4j.core.Album;
 import com.mmounirou.spoty4j.core.Artist;
 import com.mmounirou.spoty4j.core.Track;
 
-public class TrackLookupResultProvider implements MessageBodyReader<Track>
+public class LookupTrackResultProvider implements MessageBodyReader<Track>
 {
 
 	public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)

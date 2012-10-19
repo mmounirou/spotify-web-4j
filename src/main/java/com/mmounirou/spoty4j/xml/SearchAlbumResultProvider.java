@@ -18,9 +18,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.mmounirou.spoty4j.core.Album;
 import com.mmounirou.spoty4j.core.Artist;
-import com.mmounirou.spoty4j.xml.AlbumSearchResultProvider.AlbumSearchResult;
+import com.mmounirou.spoty4j.xml.SearchAlbumResultProvider.AlbumSearchResult;
 
-public class AlbumSearchResultProvider implements MessageBodyReader<AlbumSearchResult>
+public class SearchAlbumResultProvider implements MessageBodyReader<AlbumSearchResult>
 {
 	public static final class AlbumSearchResult
 	{

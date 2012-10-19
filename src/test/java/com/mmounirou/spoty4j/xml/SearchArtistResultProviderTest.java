@@ -12,17 +12,17 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableList;
 import com.mmounirou.spoty4j.core.Artist;
-import com.mmounirou.spoty4j.xml.ArtistSearchResultProvider.ArtistSearchResult;
+import com.mmounirou.spoty4j.xml.SearchArtistResultProvider.ArtistSearchResult;
 
-public class ArtistSearchResultProviderTest
+public class SearchArtistResultProviderTest
 {
 
-	private ArtistSearchResultProvider m_artistSearchResultProvider;
+	private SearchArtistResultProvider m_artistSearchResultProvider;
 
 	@Before
 	public void createArtistSearchResultProvider() throws Exception
 	{
-		m_artistSearchResultProvider = new ArtistSearchResultProvider();
+		m_artistSearchResultProvider = new SearchArtistResultProvider();
 	}
 
 	@Test
@@ -40,7 +40,7 @@ public class ArtistSearchResultProviderTest
 	@Test
 	public void testReadFrom() throws WebApplicationException, IOException
 	{
-		InputStream inputStream = ArtistSearchResultProvider.class.getResourceAsStream("/search-artist.xml");
+		InputStream inputStream = SearchArtistResultProvider.class.getResourceAsStream("/search-artist.xml");
 		ArtistSearchResult result = m_artistSearchResultProvider.readFrom(ArtistSearchResult.class, null, null, null, null, inputStream);
 
 		ImmutableList<Artist> artists = result.getArtists();

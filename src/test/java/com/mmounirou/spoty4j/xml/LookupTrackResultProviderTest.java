@@ -13,15 +13,15 @@ import org.junit.Test;
 
 import com.mmounirou.spoty4j.core.Track;
 
-public class TrackLookupResultProviderTest
+public class LookupTrackResultProviderTest
 {
 
-	private TrackLookupResultProvider m_trackLookupResultProvider;
+	private LookupTrackResultProvider m_trackLookupResultProvider;
 
 	@Before
 	public void createTrackLookupResultProvider() throws Exception
 	{
-		m_trackLookupResultProvider = new TrackLookupResultProvider();
+		m_trackLookupResultProvider = new LookupTrackResultProvider();
 	}
 
 	@After

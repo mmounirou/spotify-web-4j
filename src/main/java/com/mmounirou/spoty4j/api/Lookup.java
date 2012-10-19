@@ -3,9 +3,9 @@ package com.mmounirou.spoty4j.api;
 import com.mmounirou.spoty4j.core.Album;
 import com.mmounirou.spoty4j.core.Artist;
 import com.mmounirou.spoty4j.core.Track;
-import com.mmounirou.spoty4j.xml.AlbumLookupResultProvider;
-import com.mmounirou.spoty4j.xml.ArtistLookupResultProvider;
-import com.mmounirou.spoty4j.xml.TrackLookupResultProvider;
+import com.mmounirou.spoty4j.xml.LookupAlbumResultProvider;
+import com.mmounirou.spoty4j.xml.LookupArtistResultProvider;
+import com.mmounirou.spoty4j.xml.LookupTrackResultProvider;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
@@ -17,7 +17,7 @@ public class Lookup
 
 	public static Artist fetchArtist(Artist artist)
 	{
-		ClientConfig config = new DefaultClientConfig(ArtistLookupResultProvider.class);
+		ClientConfig config = new DefaultClientConfig(LookupArtistResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
 		return resource.queryParam("uri", artist.getHref()).queryParam("extras", "albumdetail").get(Artist.class);
@@ -26,7 +26,7 @@ public class Lookup
 
 	public static Album fetchAlbum(Album album)
 	{
-		ClientConfig config = new DefaultClientConfig(AlbumLookupResultProvider.class);
+		ClientConfig config = new DefaultClientConfig(LookupAlbumResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
 		return resource.queryParam("uri", album.getHref()).queryParam("extras", "trackdetail").get(Album.class);
@@ -34,7 +34,7 @@ public class Lookup
 
 	public static Track fetchTrack(Track track)
 	{
-		ClientConfig config = new DefaultClientConfig(TrackLookupResultProvider.class);
+		ClientConfig config = new DefaultClientConfig(LookupTrackResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
 		return resource.queryParam("uri", track.getHref()).get(Track.class);

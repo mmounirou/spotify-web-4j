@@ -22,9 +22,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.io.CharStreams;
 import com.mmounirou.spoty4j.core.Artist;
-import com.mmounirou.spoty4j.xml.ArtistSearchResultProvider.ArtistSearchResult;
+import com.mmounirou.spoty4j.xml.SearchArtistResultProvider.ArtistSearchResult;
 
-public class ArtistSearchResultProvider implements MessageBodyReader<ArtistSearchResult>
+public class SearchArtistResultProvider implements MessageBodyReader<ArtistSearchResult>
 {
 
 	public static class ArtistSearchResult

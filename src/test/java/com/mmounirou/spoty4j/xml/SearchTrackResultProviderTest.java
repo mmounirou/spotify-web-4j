@@ -12,17 +12,17 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableList;
 import com.mmounirou.spoty4j.core.Track;
-import com.mmounirou.spoty4j.xml.TrackSearchResultProvider.TrackSearchResult;
+import com.mmounirou.spoty4j.xml.SearchTrackResultProvider.TrackSearchResult;
 
-public class TrackSearchResultProviderTest
+public class SearchTrackResultProviderTest
 {
 
-	private TrackSearchResultProvider m_trackSearchResultProvider;
+	private SearchTrackResultProvider m_trackSearchResultProvider;
 
 	@Before
 	public void createTrackSearchResultProvider() throws Exception
 	{
-		m_trackSearchResultProvider = new TrackSearchResultProvider();
+		m_trackSearchResultProvider = new SearchTrackResultProvider();
 	}
 
 	@Test
@@ -40,7 +40,7 @@ public class TrackSearchResultProviderTest
 	@Test
 	public void testReadFrom() throws WebApplicationException, IOException
 	{
-		InputStream entityStream = TrackSearchResultProviderTest.class.getResourceAsStream("/search-track.xml");
+		InputStream entityStream = SearchTrackResultProviderTest.class.getResourceAsStream("/search-track.xml");
 		TrackSearchResult result = m_trackSearchResultProvider.readFrom(TrackSearchResult.class, null, null, null, null, entityStream);
 
 		ImmutableList<Track> tracks = result.getTracks();
