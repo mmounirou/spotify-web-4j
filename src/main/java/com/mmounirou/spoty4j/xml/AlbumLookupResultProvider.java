@@ -45,7 +45,6 @@ public class AlbumLookupResultProvider implements MessageBodyReader<Album>
 		//TODO merge rules between lookup and search
 		
 		digester.addObjectCreate("album", Album.class);
-		digester.addSetNext("album", "addAlbum");
 
 		digester.addBeanPropertySetter("album/name");
 		digester.addBeanPropertySetter("album/id");

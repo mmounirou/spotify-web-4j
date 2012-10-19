@@ -14,7 +14,7 @@ public class Album
 	private String m_id;
 	private int m_released;
 	private double m_popularity;
-	
+
 	private String m_territories;
 	private List<Track> m_tracks = Lists.newArrayList();
 
@@ -83,7 +83,6 @@ public class Album
 		m_released = release;
 	}
 
-
 	public List<Track> getTracks()
 	{
 		return ImmutableList.copyOf(m_tracks);
@@ -92,6 +91,11 @@ public class Album
 	public void setTracks(List<Track> tracks)
 	{
 		m_tracks.addAll(tracks);
+	}
+
+	public void addTrack(Track track)
+	{
+		m_tracks.add(track);
 	}
 
 	public String getTerritories()
