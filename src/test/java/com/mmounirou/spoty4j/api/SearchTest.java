@@ -20,7 +20,7 @@ public class SearchTest
 		assertThat(searchAlbum.get(0).getHref()).isEqualTo("spotify:album:2PWHJ3VkEFZKUgtM5NEC2X");
 		assertThat(searchAlbum.get(0).getId()).isEqualTo("700261810690");
 		assertThat(searchAlbum.get(0).getName()).isEqualTo("Empire Mates State of Mind");
-		assertThat(searchAlbum.get(0).getPopularity()).isEqualTo(0.51735);
+		assertThat(searchAlbum.get(0).getPopularity()).isNotNull().isPositive();
 		assertThat(searchAlbum.get(0).getReleased()).isEqualTo(0);
 		assertThat(searchAlbum.get(0).getTracks()).isEmpty();
 
@@ -39,13 +39,13 @@ public class SearchTest
 	public void testSearchTrack()
 	{
 		ImmutableList<Track> tracks = Search.searchTrack("Pakurumo");
-		assertThat(tracks).hasSize(1);
+		assertThat(tracks).hasSize(2);
 		assertThat(tracks.get(0).getHref()).isEqualTo("spotify:track:5YgyvTZmdkIfFOnj8ri8mZ");
 		assertThat(tracks.get(0).getDiskNumber()).isEqualTo(0);
 		assertThat(tracks.get(0).getId()).isEqualTo("ushm81288000");
 		assertThat(tracks.get(0).getName()).isEqualTo("Pakurumo");
-		assertThat(tracks.get(0).getPopularity()).isEqualTo(0.44105);
-		assertThat(tracks.get(0).getTrackNumber()).isEqualTo(4);
+		assertThat(tracks.get(0).getPopularity()).isPositive();
+		assertThat(tracks.get(0).getTrackNumber()).isPositive();
 		assertThat(tracks.get(0).getAlbum().getHref()).isEqualTo("spotify:album:4o0rVyqZMIvO3PCgbchcgo");
 		assertThat(tracks.get(0).getArtist().getHref()).isEqualTo("spotify:artist:3tVQdUvClmAT7URs9V3rsp");
 

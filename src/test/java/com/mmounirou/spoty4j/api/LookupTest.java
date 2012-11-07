@@ -44,10 +44,10 @@ public class LookupTest
 		assertThat(track.getHref()).isNull();
 		assertThat(track.getId()).isEqualTo("TCABJ1235521");
 		assertThat(track.getName()).isEqualTo("Go Hard");
-		assertThat(track.getLength()).isEqualTo(201.562);
+		assertThat(track.getLength()).isGreaterThan(201);
 		assertThat(track.getDiskNumber()).isEqualTo(0);
 		assertThat(track.getTrackNumber()).isEqualTo(1);
-		assertThat(track.getPopularity()).isEqualTo(0.16414);
+		assertThat(track.getPopularity()).isPositive();
 		assertThat(track.getAlbum().getHref()).isEqualTo("spotify:album:1ErGlCrnA6cRLkE6zMbcSR");
 		assertThat(track.getArtist().getHref()).isEqualTo("spotify:artist:094nOQ29vLC8FjZ3PhnM2u");
 	}
