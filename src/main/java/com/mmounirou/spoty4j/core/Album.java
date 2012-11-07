@@ -30,7 +30,9 @@ public class Album
 
 	public Album fetch()
 	{
-		return Lookup.fetchAlbum(this);
+		Album fetchAlbum = Lookup.fetchAlbum(this);
+		fetchAlbum.setHref(this.getHref());
+		return fetchAlbum;
 	}
 
 	public String getName()

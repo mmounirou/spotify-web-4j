@@ -27,7 +27,9 @@ public class Track
 
 	public Track fetch()
 	{
-		return Lookup.fetchTrack(this);
+		Track fetchTrack = Lookup.fetchTrack(this);
+		fetchTrack.setHref(this.getHref());
+		return fetchTrack;
 	}
 
 	public String getName()

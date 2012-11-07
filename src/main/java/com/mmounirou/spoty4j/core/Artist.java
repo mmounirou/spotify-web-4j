@@ -26,7 +26,9 @@ public class Artist
 
 	public Artist fetch()
 	{
-		return Lookup.fetchArtist(this);
+		Artist fetchArtist = Lookup.fetchArtist(this);
+		fetchArtist.setHref(this.getHref());
+		return fetchArtist;
 	}
 
 	public String getName()
