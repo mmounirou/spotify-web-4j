@@ -2,6 +2,7 @@ package com.mmounirou.spoty4j.core;
 
 import java.util.List;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.mmounirou.spoty4j.api.Lookup;
@@ -118,6 +119,27 @@ public class Album
 	public void setPopularity(double popularity)
 	{
 		m_popularity = popularity;
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(m_href);
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if ( this == obj )
+		{
+			return true;
+		}
+
+		if ( !(obj instanceof Album) )
+		{
+			return false;
+		}
+		return Objects.equal(((Album) obj).m_href, m_href);
 	}
 
 }

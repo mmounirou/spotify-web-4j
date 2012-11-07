@@ -1,5 +1,6 @@
 package com.mmounirou.spoty4j.core;
 
+import com.google.common.base.Objects;
 import com.mmounirou.spoty4j.api.Lookup;
 
 public class Track
@@ -130,6 +131,27 @@ public class Track
 	public void setAvailable(boolean available)
 	{
 		this.available = available;
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(m_href);
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if ( this == obj )
+		{
+			return true;
+		}
+
+		if ( !(obj instanceof Track) )
+		{
+			return false;
+		}
+		return Objects.equal(((Track) obj).m_href, m_href);
 	}
 
 }

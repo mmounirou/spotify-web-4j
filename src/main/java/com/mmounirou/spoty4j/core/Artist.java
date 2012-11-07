@@ -2,6 +2,7 @@ package com.mmounirou.spoty4j.core;
 
 import java.util.List;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.mmounirou.spoty4j.api.Lookup;
@@ -85,4 +86,26 @@ public class Artist
 	{
 		m_popularity = popularity;
 	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(m_uri);
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if ( this == obj )
+		{
+			return true;
+		}
+
+		if ( !(obj instanceof Artist) )
+		{
+			return false;
+		}
+		return Objects.equal(((Artist) obj).m_uri, m_uri);
+	}
+
 }
