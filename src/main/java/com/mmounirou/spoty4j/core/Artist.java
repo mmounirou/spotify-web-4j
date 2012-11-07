@@ -2,8 +2,9 @@ package com.mmounirou.spoty4j.core;
 
 import java.util.List;
 
+import com.google.common.base.Function;
 import com.google.common.base.Objects;
-import com.google.common.collect.ImmutableList;
+import com.google.common.collect.FluentIterable;
 import com.google.common.collect.Lists;
 import com.mmounirou.spoty4j.api.Lookup;
 
@@ -54,7 +55,19 @@ public class Artist
 
 	public List<Album> getAlbums()
 	{
-		return ImmutableList.copyOf(m_albums);
+		return FluentIterable.from(m_albums).transform(appendArtist()).toImmutableList();
+	}
+
+	private Function<Album, Album> appendArtist()
+	{
+		return new Function<Album, Album>()
+		{
+			public Album apply(Album input)
+			{
+				input.setArtist(Artist.this);
+				return input;
+			}
+		};
 	}
 
 	public void setAlbums(List<Album> albums)
