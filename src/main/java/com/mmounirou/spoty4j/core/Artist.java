@@ -121,4 +121,10 @@ public class Artist
 		return Objects.equal(((Artist) obj).m_uri, m_uri);
 	}
 
+	@Override
+	public String toString()
+	{
+		return  m_name ;
+	}
+
 }

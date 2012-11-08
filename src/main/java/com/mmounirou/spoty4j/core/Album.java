@@ -142,4 +142,10 @@ public class Album
 		return Objects.equal(((Album) obj).m_href, m_href);
 	}
 
+	@Override
+	public String toString()
+	{
+		return m_name;
+	}
+
 }
