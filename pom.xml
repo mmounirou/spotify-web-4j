@@ -7,11 +7,11 @@
 	<name>spotify-web-4j</name>
 	<description>Java Wrapper Around Spotify Web Api</description>
 	<url>https://github.com/mmounirou/spotify-web-4j</url>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>mmounirou.repos</id>
-			<url>https://repository-mmounirou.forge.cloudbees.com/release/</url>
+			<url>dav:https://repository-mmounirou.forge.cloudbees.com/release/</url>
 		</repository>
 	</distributionManagement>
 	<issueManagement>
@@ -76,6 +76,13 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>1.0-beta-2</version>
+			</extension>
+		</extensions>
 	</build>
 
 	<scm>
