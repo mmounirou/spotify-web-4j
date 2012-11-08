@@ -21,6 +21,8 @@ public class Search
 
 	public static ImmutableList<Album> searchAlbum(String name)
 	{
+		//TODO add log
+
 		ClientConfig config = new DefaultClientConfig(SearchAlbumResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
@@ -30,6 +32,7 @@ public class Search
 
 	public static ImmutableList<Artist> searchArtist(String name)
 	{
+		//TODO add log
 		ClientConfig config = new DefaultClientConfig(SearchArtistResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
@@ -39,6 +42,8 @@ public class Search
 
 	public static ImmutableList<Track> searchTrack(String name)
 	{
+		//TODO add log
+
 		ClientConfig config = new DefaultClientConfig(SearchTrackResultProvider.class);
 		Client client = Client.create(config);
 		WebResource resource = client.resource(BASE_URL);
