@@ -36,22 +36,19 @@ public abstract class DigesterMessageBodyReader<T> implements MessageBodyReader<
 		try
 		{
 			return digester.parse(cleanStream(entityStream));
-		}
-		catch ( SAXException e )
+		} catch (SAXException e)
 		{
 			throw new IOException(e);
 		}
 	}
 
-
 	private ByteArrayInputStream cleanStream(InputStream entityStream) throws IOException, UnsupportedEncodingException
 	{
-		String strStream = CharStreams.toString(new InputStreamReader(entityStream, Charsets.UTF_8.name()));
-		String clean = strStream.replace("&", "-");
-		return new ByteArrayInputStream(clean.getBytes());
+		String strStream = CharStreams.toString(new InputStreamReader(entityStream));
+		strStream = strStream.replace("&", "-");
+		return new ByteArrayInputStream(strStream.getBytes());
 	}
 
-	
 	protected abstract void addRules(Digester digester);
 
 	protected abstract Class<T> getGenericClass();
