@@ -4,8 +4,24 @@
 	<groupId>com.mmounirou.spotify</groupId>
 	<artifactId>spotify-web-4j</artifactId>
 	<version>1.1-SNAPSHOT</version>
-	<name>Spoti4j</name>
+	<name>spotify-web-4j</name>
 	<description>Java Wrapper Around Spotify Web Api</description>
+	<url>https://github.com/mmounirou/spotify-web-4j</url>
+	
+	<distributionManagement>
+		<repository>
+			<id>mmounirou.repos</id>
+			<url>https://repository-mmounirou.forge.cloudbees.com/release/</url>
+		</repository>
+	</distributionManagement>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/mmounirou/spotify-web-4j/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>https://mmounirou.ci.cloudbees.com/job/spotify-web-4j/</url>
+	</ciManagement>
 
 
 	<dependencies>
@@ -49,4 +65,21 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<preparationGoals>clean verify</preparationGoals>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<scm>
+		<connection>scm:git:git@github.com:mmounirou/spotify-web-4j.git</connection>
+		<url>https://github.com/mmounirou/spotify-web-4j</url>
+	</scm>
 </project>
