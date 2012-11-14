@@ -8,9 +8,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 /**
- * add support for covert art.
-The covert art are retreived using the open.spotify.com web site.
-This solution is awkward but it's the best i found
+ * add support for covert art. The covert art are retreived using the open.spotify.com web site. This solution is
+ * awkward but it's the best i found
  * @author mmounirou
  */
 public final class Open
@@ -25,19 +24,23 @@ public final class Open
 
 	public static String getArtistCovertArt(String strHref) throws IOException
 	{
-		String strArtistId = StringUtils.removeStart(strHref, "spotify:artist:");
-		return getCoverArtFromHtml(String.format("%s/%s/%s", BASE_URL, "artist", strArtistId));
+		return getCovertArt(strHref, "artist");
 	}
 
 	public static String getAlbumCovertArt(String strHref) throws IOException
 	{
-		String strAlbum = StringUtils.removeStart(strHref, "spotify:album:");
-		return getCoverArtFromHtml(String.format("%s/%s/%s", BASE_URL, "album", strAlbum));
+		return getCovertArt(strHref, "album");
 	}
 
-	private static String getCoverArtFromHtml(String artistUrl) throws IOException
+	public static String getTrackCovertArt(String strHref) throws IOException
 	{
-		Document document = Jsoup.connect(artistUrl).get();
+		return getCovertArt(strHref, "track");
+	}
+
+	private static String getCovertArt(String strHref, String kind) throws IOException
+	{
+		String strAlbum = StringUtils.removeStart(strHref, String.format("spotify:%s:", kind));
+		Document document = Jsoup.connect(String.format("%s/%s/%s", BASE_URL, kind, strAlbum)).get();
 		Element imgElement = document.getElementById(COVER_CSS_ID);
 		return imgElement.attr(CORVER_CSS_ATTR);
 	}
